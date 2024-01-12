@@ -5,13 +5,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Box
-      component="footer"
-      sx={{
-        p: "2rem",
-        width: "100%",
-      }}
-    >
+    <Box component="footer" sx={{ p: "2rem" }}>
       <Typography
         variant="body2"
         component="div"

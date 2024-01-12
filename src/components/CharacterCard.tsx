@@ -9,6 +9,16 @@ import {
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
+const cardStyles = {
+  maxWidth: "200px",
+  width: "100%",
+  height: "240px",
+  margin: 1,
+  "&:hover, &:focus-within": {
+    backgroundColor: "grey.200",
+  },
+};
+
 export function CharacterCard({ character }: { character: CharacterTypes }) {
   const characterId = character.url.split("/").slice(-2, -1)[0];
   const dispatch = useDispatch();
@@ -29,16 +39,7 @@ export function CharacterCard({ character }: { character: CharacterTypes }) {
   };
 
   return (
-    <Card
-      sx={{
-        maxWidth: "200px",
-        width: "100%",
-        margin: 1,
-        "&:hover, &:focus-within": {
-          backgroundColor: "grey.200",
-        },
-      }}
-    >
+    <Card sx={cardStyles}>
       <Link
         to={`/characters/${characterId}`}
         style={{ textDecoration: "none" }}

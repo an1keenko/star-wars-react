@@ -3,6 +3,13 @@ import { RootState } from "../store";
 import { CharacterCard } from "./CharacterCard.tsx";
 import { Box, Card, Typography } from "@mui/material";
 
+const boxStyles = {
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-around",
+  alignItems: "center",
+};
+
 export function Favourites() {
   const favouriteCharacters = useSelector(
     (state: RootState) => state.character,
@@ -14,14 +21,7 @@ export function Favourites() {
         Favourite Characters
       </Typography>
       {favouriteCharacters.length > 0 ? (
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
+        <Box sx={boxStyles}>
           {favouriteCharacters.map((character) => (
             <Box sx={{ margin: "auto" }} key={character.name}>
               <CharacterCard key={character.name} character={character} />

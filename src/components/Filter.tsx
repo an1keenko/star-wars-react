@@ -15,6 +15,15 @@ import { FiltersTypes } from "../types/Filter.types.ts";
 import { api } from "../services/api.ts";
 import { FilmType } from "../types/Film.types.ts";
 
+const paperStyles = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "16px",
+  p: "16px 32px",
+  maxHeight: "500px",
+  maxWidth: "168px",
+};
+
 export function Filter({
   onFilterChange,
 }: {
@@ -49,16 +58,7 @@ export function Filter({
   };
 
   return (
-    <Paper
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "16px",
-        p: "16px 32px",
-        maxHeight: "500px",
-        maxWidth: "168px",
-      }}
-    >
+    <Paper sx={paperStyles}>
       <FormControl>
         <InputLabel id="movie-label">Film</InputLabel>
         <Select
