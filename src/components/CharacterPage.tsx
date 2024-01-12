@@ -1,15 +1,15 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 import { CharacterTypes } from "../types/Character.types.ts";
 import { api } from "../services/api.ts";
-import { CircularProgress, Typography, Box, IconButton } from "@mui/material";
-import ArrowBack from "@mui/icons-material/ArrowBack";
+import { CircularProgress, Typography, Box } from "@mui/material";
 import { FilmType } from "../types/Film.types.ts";
 import { SpeciesType } from "../types/Species.types.ts";
 import { VehicleType } from "../types/Vehicle.types.ts";
 import { StarshipType } from "../types/Starship.types.ts";
 import { PlanetType } from "../types/Planet.types.ts";
 import { ErrorComponent } from "./Error.tsx";
+import { BackButton } from "./BackButton.tsx";
 
 export default function CharacterPage() {
   const { id } = useParams();
@@ -68,14 +68,7 @@ export default function CharacterPage() {
 
   return character ? (
     <>
-      <Link to="/" style={{ display: "flex", alignItems: "center" }}>
-        <IconButton disableRipple>
-          <ArrowBack fontSize="large" />
-        </IconButton>
-        <Typography variant="h5" color="#757575">
-          Back to characters
-        </Typography>
-      </Link>
+      <BackButton />
       <Box sx={{ display: "flex", gap: "60px", my: 4 }}>
         <img
           src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}

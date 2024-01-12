@@ -2,11 +2,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import { CharacterCard } from "./CharacterCard.tsx";
 import { Box, Card, Typography } from "@mui/material";
+import { BackButton } from "./BackButton.tsx";
 
 const boxStyles = {
   display: "flex",
   flexWrap: "wrap",
-  justifyContent: "space-around",
+  gap: "32px",
+  justifyContent: "center",
   alignItems: "center",
 };
 
@@ -17,13 +19,14 @@ export function Favourites() {
 
   return (
     <>
+      <BackButton />
       <Typography variant="h4" sx={{ mb: 2 }}>
         Favourite Characters
       </Typography>
       {favouriteCharacters.length > 0 ? (
         <Box sx={boxStyles}>
           {favouriteCharacters.map((character) => (
-            <Box sx={{ margin: "auto" }} key={character.name}>
+            <Box key={character.name}>
               <CharacterCard key={character.name} character={character} />
             </Box>
           ))}

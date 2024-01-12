@@ -5,14 +5,15 @@ import Typography from "@mui/material/Typography";
 import {
   setFavouriteCharacter,
   removeFavouriteCharacter,
+  selectIsFavourite,
 } from "../store/Character.slice.ts";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store";
 
 const cardStyles = {
-  maxWidth: "200px",
+  maxWidth: "300px",
   width: "100%",
-  height: "240px",
+  height: "260px",
   margin: 1,
   "&:hover, &:focus-within": {
     backgroundColor: "grey.200",
@@ -22,19 +23,15 @@ const cardStyles = {
 export function CharacterCard({ character }: { character: CharacterTypes }) {
   const characterId = character.url.split("/").slice(-2, -1)[0];
   const dispatch = useDispatch();
-  const [isFavourite, setIsFavourite] = useState(false);
+  const isFavourite = useSelector((state: RootState) =>
+    selectIsFavourite(state, character.name),
+  );
 
-  const handleAddToFavourites = () => {
-    if (character) {
-      dispatch(setFavouriteCharacter(character));
-      setIsFavourite(true);
-    }
-  };
-
-  const handleRemoveFromFavourites = () => {
-    if (character) {
+  const handleFavouriteToggle = () => {
+    if (isFavourite) {
       dispatch(removeFavouriteCharacter(character));
-      setIsFavourite(false);
+    } else {
+      dispatch(setFavouriteCharacter(character));
     }
   };
 
@@ -61,12 +58,8 @@ export function CharacterCard({ character }: { character: CharacterTypes }) {
           </Typography>
         </CardContent>
       </Link>
-      <Button
-        onClick={
-          isFavourite ? handleRemoveFromFavourites : handleAddToFavourites
-        }
-      >
-        {isFavourite ? "Remove" : "Add to Favourites"}
+      <Button onClick={handleFavouriteToggle}>
+        {isFavourite ? "Remove from Favourites" : "Add to Favourites"}
       </Button>
     </Card>
   );

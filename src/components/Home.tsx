@@ -46,7 +46,7 @@ export default function Home() {
       <Typography textAlign="start" sx={{ p: "16px" }}>
         Total characters: {filteredCharacters.length}
       </Typography>
-      <Box sx={{ display: "flex", gap: "16px" }}>
+      <Box sx={{ display: "flex", gap: "32px" }}>
         <Filter onFilterChange={handleFilterChange} />
         <Box
           sx={{

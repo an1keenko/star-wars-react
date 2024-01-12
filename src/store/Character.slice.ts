@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CharacterTypes } from "../types/Character.types.ts";
+import { RootState } from "./index.ts";
 
 const characterSlice = createSlice({
   name: "character",
@@ -31,5 +32,9 @@ const characterSlice = createSlice({
 
 export const { setFavouriteCharacter, removeFavouriteCharacter } =
   characterSlice.actions;
+
+export const selectIsFavourite = (state: RootState, characterName: string) => {
+  return state.character.some((character) => character.name === characterName);
+};
 
 export default characterSlice.reducer;
