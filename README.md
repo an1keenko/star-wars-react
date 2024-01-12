@@ -16,7 +16,7 @@ To run this project locally, follow these steps:
 1. Clone the repository to your local machine using `git clone`.
 
 ```bash
-git clone https://github.com/yourusername/star-wars-characters.git
+git clone git@github.com:an1keenko/star-wars-react.git
 ```
 
 2. Navigate to the project directory.
@@ -34,11 +34,7 @@ npm install
 4. Start the development server.
 
 ```bash
-npm start
+npm run dev
 ```
 
-The application should now be running at `http://localhost:3000`.
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+The application should now be running at `http://localhost:5173`.
