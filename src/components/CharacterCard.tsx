@@ -13,7 +13,7 @@ import { RootState } from "../store";
 const cardStyles = {
   maxWidth: "300px",
   width: "100%",
-  height: "260px",
+  height: "280px",
   margin: 1,
   "&:hover, &:focus-within": {
     backgroundColor: "grey.200",

@@ -14,6 +14,14 @@ import { api } from "../services/api.ts";
 import { ErrorComponent } from "./Error.tsx";
 import { BackButton } from "./BackButton.tsx";
 
+const boxStyles = {
+  display: "flex",
+  alignItems: { xs: "center", sm: "center" },
+  flexDirection: { xs: "column", sm: "column", md: "row" },
+  gap: "60px",
+  my: 4,
+};
+
 export default function CharacterPage() {
   const { id } = useParams();
   const [character, setCharacter] = useState<CharacterTypes | null>(null);
@@ -72,7 +80,7 @@ export default function CharacterPage() {
   return character ? (
     <>
       <BackButton />
-      <Box sx={{ display: "flex", gap: "60px", my: 4 }}>
+      <Box sx={boxStyles}>
         <img
           src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
           style={{ width: "360px" }}
