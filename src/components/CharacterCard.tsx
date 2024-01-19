@@ -1,13 +1,13 @@
-import { Button, Card, CardContent } from "@mui/material";
-import { CharacterTypes } from "../types/Character.types.ts";
+import { Button, Card, CardContent, Typography } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Typography from "@mui/material/Typography";
+
+import { CharacterTypes } from "../types/Character.types.ts";
 import {
   setFavouriteCharacter,
   removeFavouriteCharacter,
   selectIsFavourite,
 } from "../store/Character.slice.ts";
-import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
 
 const cardStyles = {

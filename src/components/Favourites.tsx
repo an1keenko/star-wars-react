@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
+import { Box, Card, Typography } from "@mui/material";
+
 import { RootState } from "../store";
 import { CharacterCard } from "./CharacterCard.tsx";
-import { Box, Card, Typography } from "@mui/material";
 import { BackButton } from "./BackButton.tsx";
 
 const boxStyles = {

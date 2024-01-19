@@ -1,11 +1,11 @@
-import { CircularProgress, Box } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
-import { CharacterTypes } from "../types/Character.types.ts";
+import { Box, CircularProgress, Typography } from "@mui/material";
+
+import { CharacterCard } from "./CharacterCard.tsx";
 import { ErrorComponent } from "./Error.tsx";
 import { Filter } from "./Filter.tsx";
+import { CharacterTypes } from "../types/Character.types.ts";
 import { FiltersTypes } from "../types/Filter.types.ts";
-import { CharacterCard } from "./CharacterCard.tsx";
-import Typography from "@mui/material/Typography";
 import { filterCharacters, getData } from "../utils.ts";
 
 export default function Home() {

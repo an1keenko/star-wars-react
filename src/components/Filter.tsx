@@ -11,9 +11,11 @@ import {
   Select,
   TextField,
 } from "@mui/material";
+
 import { FiltersTypes } from "../types/Filter.types.ts";
-import { api } from "../services/api.ts";
 import { FilmType } from "../types/Film.types.ts";
+
+import { api } from "../services/api.ts";
 
 const paperStyles = {
   display: "flex",

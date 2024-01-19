@@ -1,13 +1,16 @@
 import { useParams } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
-import { CharacterTypes } from "../types/Character.types.ts";
-import { api } from "../services/api.ts";
 import { CircularProgress, Typography, Box } from "@mui/material";
+
+import { CharacterTypes } from "../types/Character.types.ts";
 import { FilmType } from "../types/Film.types.ts";
 import { SpeciesType } from "../types/Species.types.ts";
 import { VehicleType } from "../types/Vehicle.types.ts";
 import { StarshipType } from "../types/Starship.types.ts";
 import { PlanetType } from "../types/Planet.types.ts";
+
+import { api } from "../services/api.ts";
+
 import { ErrorComponent } from "./Error.tsx";
 import { BackButton } from "./BackButton.tsx";
 

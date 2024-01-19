@@ -1,7 +1,8 @@
+import { Box } from "@mui/material";
+
 import { AppContainer } from "./AppContainer.tsx";
 import { Header } from "./Header.tsx";
 import { Outlet } from "react-router-dom";
-import { Box } from "@mui/material";
 import { Footer } from "./Footer.tsx";
 
 export default function Layout() {
